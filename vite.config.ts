@@ -48,4 +48,11 @@ export default defineConfig({
     }),
     Unocss(),
   ],
+  test: {
+    include: ["src/**/*.spec.ts"],
+    environment: "jsdom",
+    deps: {
+      inline: ["@vue", "@vueuse", "vue-demi"],
+    },
+  },
 });
