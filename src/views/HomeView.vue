@@ -4,6 +4,6 @@ const { t } = useI18n();
 
 <template>
   <main>
-    <h1>{{ t("button.home") }}</h1>
+    <h1>{{ t("home.intro") }}</h1>
   </main>
 </template>

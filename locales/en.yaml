@@ -2,4 +2,6 @@ navigation:
   home: Home
 page-header:
   home: The page header for the home page
+home:
+  intro: Home!!
 not-found: Not found
