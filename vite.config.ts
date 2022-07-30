@@ -49,7 +49,7 @@ export default defineConfig({
     Unocss(),
   ],
   test: {
-    include: ["src/**/*.spec.ts"],
+    include: ["test/**/*.test.ts"],
     environment: "jsdom",
     deps: {
       inline: ["@vue", "@vueuse", "vue-demi"],
