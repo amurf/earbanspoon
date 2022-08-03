@@ -18,7 +18,10 @@ function start() {
   volumeData = [];
 
   navigator.mediaDevices
-    .getUserMedia({ audio: true, video: false })
+    .getUserMedia({
+      audio: { noiseSuppression: false },
+      video: false,
+    })
     .then(async function (mediaStream) {
       audioContext = new AudioContext();
 
