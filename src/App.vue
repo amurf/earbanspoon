@@ -2,21 +2,20 @@
 // volume-meter.js
 import atanProcessorUrl from "./vumeter.js?url";
 
-const peakVolume = $ref(0);
-const currentVolume = $ref(null);
-const volumeData = $ref([]);
-const averageVolume = $ref(0);
+let peakVolume = $ref(0);
+let currentVolume = $ref(0);
+let volumeData: Array<number> = $ref([]);
+let averageVolume = $ref(0);
+let isRecording = $ref(false);
 
-const isRecording = $ref(false);
-
-let audioContext;
-let source;
+let audioContext: AudioContext;
+let source: MediaStreamAudioSourceNode;
 
 function start() {
   peakVolume = 0;
-  volumeData = [];
   averageVolume = 0;
-  currentVolume = null;
+  currentVolume = 0;
+  volumeData = [];
 
   navigator.mediaDevices
     .getUserMedia({ audio: true, video: false })

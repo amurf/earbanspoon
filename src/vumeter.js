@@ -1,16 +1,11 @@
 // /worklet/vumeter.js
-/* eslint-disable no-underscore-dangle */
+
 const SMOOTHING_FACTOR = 0.8;
-// eslint-disable-next-line no-unused-vars
 const MINIMUM_VALUE = 0.00001;
 
 registerProcessor(
-  'vumeter',
+  "vumeter",
   class extends AudioWorkletProcessor {
-    _volume;
-    _updateIntervalInMS;
-    _nextUpdateFrame;
-
     constructor() {
       super();
       this._volume = 0;
@@ -57,5 +52,5 @@ registerProcessor(
 
       return true;
     }
-  },
+  }
 );
