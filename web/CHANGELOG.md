@@ -1,3 +1,21 @@
+# [1.1.0](https://github.com/amurf/earbanspoon/compare/v1.0.0...v1.1.0) (2022-08-05)
+
+
+### Bug Fixes
+
+* add web suffix to package.json name ([879a84d](https://github.com/amurf/earbanspoon/commit/879a84d236443baabe6b4fb468bb16f228ddc6cd))
+* type + linting errors from setup ([9f90344](https://github.com/amurf/earbanspoon/commit/9f90344c175ea4d1a07ca61ff24fa6d85073dd03))
+
+
+### Features
+
+* add flutter apps ([89fe313](https://github.com/amurf/earbanspoon/commit/89fe3131f9c0389e6ff7877ac5f4d17639b823b4))
+* add netlify config to repo ([3bee666](https://github.com/amurf/earbanspoon/commit/3bee6661e0c2d5ea88fa6a3dfcfbc0342c52e723))
+* move to web directory ([d58ed62](https://github.com/amurf/earbanspoon/commit/d58ed625cb86bfcf2cf4a884a7b2a8ec1b12e719))
+* remove noise suppression from recording ([efff2a3](https://github.com/amurf/earbanspoon/commit/efff2a3728d0837a7050cf4324b9b97f9bfc93ec))
+* remove web audio recording - not required ([4174780](https://github.com/amurf/earbanspoon/commit/4174780a98e21c88d21be2a4ba5aa0ad12cd9a04))
+* wip volume data ([f981ae6](https://github.com/amurf/earbanspoon/commit/f981ae69522210e913a2058008931ae976719816))
+
 # 1.0.0 (2022-07-29)
 
 
