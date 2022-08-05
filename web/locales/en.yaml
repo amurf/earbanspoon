@@ -1,7 +1,9 @@
 navigation:
   home: Home
+  list-all: List All
 page-header:
   home: The page header for the home page
+  list-all: All entries
 home:
   intro: Home!!
 not-found: Not found

@@ -1,10 +1,12 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <Navbar />
+  <TopNav />
   <PageHeader />
-  <RouterView />
+
+  <Suspense>
+    <RouterView />
+  </Suspense>
 </template>
 
 <style scoped></style>
