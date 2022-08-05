@@ -16,7 +16,10 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> {
   bool _isRecording = false;
+  int dB = -1;
   StreamSubscription<NoiseReading>? _noiseSubscription;
+
+  late List<int> dBHistory = [];
   late NoiseMeter _noiseMeter;
 
   @override
@@ -38,9 +41,17 @@ class MyAppState extends State<MyApp> {
       }
     });
     if (kDebugMode) {
-      print(noiseReading.toString());
+      // print(noiseReading.maxDecibel);
+      dB = noiseReading.meanDecibel.floor();
+      dBHistory.add(dB);
     }
   }
+
+  int averageDb() {
+    int total = dBHistory.reduce((value, element) => value + element);
+    return (total / dBHistory.length).floor();
+  }
+
 
   void onError(Object error) {
     if (kDebugMode) {
@@ -75,6 +86,16 @@ class MyAppState extends State<MyApp> {
     }
   }
 
+  Widget currentDecibels() => Container(
+      margin: const EdgeInsets.only(top: 20),
+      child: Text(_isRecording && dB >= 0 ? dB.toString() : '', style: const TextStyle(fontSize: 25, color: Colors.black)),
+    );
+
+  Widget averageDecibelsForRecording() => Container(
+    margin: const EdgeInsets.only(top: 20),
+    child: Text(_isRecording && dBHistory.isNotEmpty ? averageDb().toString() : '', style: const TextStyle(fontSize: 25, color: Colors.black)),
+  );
+
   List<Widget> getContent() => <Widget>[
         Container(
             margin: const EdgeInsets.all(25),
@@ -83,7 +104,9 @@ class MyAppState extends State<MyApp> {
                 margin: const EdgeInsets.only(top: 20),
                 child: Text(_isRecording ? "Mic: ON" : "Mic: OFF",
                     style: const TextStyle(fontSize: 25, color: Colors.blue)),
-              )
+              ),
+              currentDecibels(),
+              averageDecibelsForRecording(),
             ])),
       ];
 
