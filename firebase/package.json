@@ -1,0 +1,15 @@
+{
+  "name": "earbanspoon-firebase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "firebase emulators:start --project demo-earbanspoon --export-on-exit=demo-earbanspoon --import=demo-earbanspoon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-tools": "^11.4.2"
+  }
+}
